@@ -49,8 +49,6 @@ h3 {
 
 .container {
   display: flex;
-
-  height: 100%;
 }
 
 .header-content {
@@ -58,6 +56,7 @@ h3 {
   overflow: hidden;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 .header {
@@ -65,10 +64,12 @@ h3 {
   height: 74px;
   background-color: #252525;
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .left-part {
-  height: 100%;
   flex: 1;
   display: flex;
   justify-content: end;
@@ -79,7 +80,10 @@ h3 {
   justify-content: end;
   width: 100%;
   background: #F7F7F7;
+  box-shadow: 3px 0px 10px 0px rgb(215 215 215);
+  position: fixed;
   height: 100%;
+  top: 74px;
 }
 
 nav {
@@ -253,13 +257,18 @@ input[type="search"]::-webkit-search-cancel-button {
   padding-bottom: 10px;
 }
 
+.right-part > div {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
 article {
   max-width: 650px;
-  padding: 40px 0;
   font-size: 20px;
 }
 
-article a, article a:visited {
+article a, article a:visited, footer a, footer a:visited {
   color: #4E89EE;
 }
 
@@ -298,3 +307,55 @@ article ul {
   padding-left: 50px;
 }
 
+aside {
+  width: fit-content;
+  overflow: hidden;
+
+}
+
+.info {
+  overflow: hidden;
+  width: 422px;
+  background-color: #F7F7F7;
+  border-radius: 23px;
+  border: solid 1px #E5E5E5;
+}
+
+.photos {
+  position: relative;
+  box-shadow: 0 20px 20px 0 rgb(0 0 0 / 27%);
+  overflow: hidden;
+  display: flex;
+  border-radius: 23px;
+}
+
+.photos img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .5s ease;
+}
+
+.photos img:last-child:hover {
+  opacity: 0;
+}
+
+.general-info > div {
+  padding: 70px 20px 30px 20px;
+}
+
+.general-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 30px 0 10px 0;
+}
+
+.general-info p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+footer {
+  border-top: 1px solid #E9E9E9;
+  padding: 30px 0 20px 0;
+}
